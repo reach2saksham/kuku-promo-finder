@@ -17,7 +17,7 @@ WHITE = "#FFFFFF"
 
 
 def _pixel_svg(rows: list[str], colors: dict[str, str]) -> str:
-    """Text grid -> crisp SVG data URI."""
+    """Turn a text grid into a crisp SVG data URI."""
     h, w = len(rows), max(len(r) for r in rows)
     rects = "".join(
         f'<rect x="{x}" y="{y}" width="1" height="1" fill="{colors[c]}"/>'

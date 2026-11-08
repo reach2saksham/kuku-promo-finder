@@ -1,6 +1,6 @@
 """Automatic quality checks (stage 3). Each promo gets PASS / REVIEW / FAIL plus flags.
 
-FAIL   breaks a hard rule from the brief (length, cutting mid-line, bad timestamps) -> never shown as a pick
+FAIL   breaks a hard rule from the brief (length, cutting mid-line, bad timestamps), so it's never shown as a pick
 REVIEW something an editor should look at before posting
 PASS   nothing found (which is not the same as "good" - see the human spot-check in the report)
 """

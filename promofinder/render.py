@@ -51,8 +51,8 @@ def write_all(out: Path, title, eps, idx, promos, picks, meta):
                         p.qc.get("status"), " | ".join(p.qc.get("flags", []))])
 
     # Markdown report
-    L = [f"# Promo picks - {title}", "",
-         f"{meta['episodes']} episodes, {meta['beats']} script beats -> {meta['candidates']} candidate promos. "
+    L = [f"# Promo picks: {title}", "",
+         f"{meta['episodes']} episodes, {meta['beats']} script beats, {meta['candidates']} candidate promos. "
          f"Model: `{meta['model']}`. QC: {meta['qc']['PASS']} pass / {meta['qc']['REVIEW']} review / {meta['qc']['FAIL']} fail. "
          f"Run time {meta['seconds']}s.", "",
          "## Post these first", "",
@@ -96,10 +96,10 @@ def write_all(out: Path, title, eps, idx, promos, picks, meta):
     def card(p):
         tr = "".join(f"<div class='{'cut' if t.startswith('---') else 'ln'}'>{html.escape(t)}</div>" for t in transcript(p, idx))
         flags = "".join(f"<li>{html.escape(f_)}</li>" for f_ in p.qc["flags"])
-        model = f" &middot; model {p.llm['overall']:.0f}/10" if p.llm.get("overall") is not None else ""
+        model = f" | model {p.llm['overall']:.0f}/10" if p.llm.get("overall") is not None else ""
         return (f"<details class='c {p.qc['status']}' {'open' if p.rank and p.rank <= 3 else ''}><summary>"
                 f"<b>{'#' + str(p.rank) + ' ' if p.rank else ''}{p.id}</b> <span class='k'>{p.kind}</span> {html.escape(seg_str(p))} "
-                f"<span class='d'>{p.duration:.0f}s &middot; score {p.final_score:.2f}{model}</span> <span class='q'>{p.qc['status']}</span></summary>"
+                f"<span class='d'>{p.duration:.0f}s | score {p.final_score:.2f}{model}</span> <span class='q'>{p.qc['status']}</span></summary>"
                 f"<p><b>Hook:</b> {html.escape(p.hook)}</p><p><b>Cliffhanger:</b> {html.escape(p.cliffhanger)}</p>"
                 f"<p><b>Why:</b> {html.escape(p.why)}</p>{'<ul>' + flags + '</ul>' if flags else ''}"
                 f"<div class='tr'>{tr}</div></details>")
@@ -112,8 +112,8 @@ summary{{cursor:pointer}} .k{{background:#eef;padding:1px 6px;border-radius:4px;
 .q{{float:right;font-size:12px;font-weight:600}} .PASS .q{{color:#17803d}} .REVIEW .q{{color:#b26b00}} .FAIL .q{{color:#b3261e}}
 .tr{{font:12px/1.4 ui-monospace,monospace;background:#fafafa;border-radius:6px;padding:8px;max-height:340px;overflow:auto}}
 .cut{{color:#b3261e;margin:4px 0}} ul{{color:#8a5a00;margin:4px 0}}</style></head><body>
-<h1>Promo picks &mdash; {html.escape(title)}</h1>
-<p class='m'>{meta['episodes']} episodes &middot; {meta['candidates']} candidates &middot; model <code>{html.escape(meta['model'])}</code> &middot;
+<h1>Promo picks: {html.escape(title)}</h1>
+<p class='m'>{meta['episodes']} episodes | {meta['candidates']} candidates | model <code>{html.escape(meta['model'])}</code> |
 QC {meta['qc']['PASS']} pass / {meta['qc']['REVIEW']} review / {meta['qc']['FAIL']} fail</p>
 <h2>Post these first</h2>{picks_html}<h2>All other candidates (by episode)</h2>{rest_html}</body></html>"""
     (out / "report.html").write_text(H, encoding="utf-8")

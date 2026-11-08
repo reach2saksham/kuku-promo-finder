@@ -1,6 +1,6 @@
-"""End-to-end run: screenplay folder/zip -> ranked, checked promo list.
+"""End-to-end run: turns a screenplay folder or zip into a ranked, checked promo list.
 
-  1 parse      screenplay -> timestamped beats                          (code)
+  1 parse      screenplay into timestamped beats                          (code)
   2 generate   every legal 20-60s window + montage shapes, rule-scored  (code, ~2s for 50 episodes)
   3 shortlist  best per episode + best overall                          (code)
   4 judge      LLM scores the shortlist, may trim, writes the "why"     (model, optional)
@@ -59,7 +59,7 @@ def _apply_trim(p: Promo, j: dict, idx) -> str | None:
     old = f"{sec_to_ts(sg.start)}-{sec_to_ts(sg.end)}"
     p.segments = [_seg(ix, s, e)]
     score_promo(p, {sg.episode: ix})
-    return f"model trimmed {old} -> {sec_to_ts(s)}-{sec_to_ts(e)}"
+    return f"model trimmed {old} to {sec_to_ts(s)}-{sec_to_ts(e)}"
 
 
 def judge(promos: list[Promo], idx, title: str, model: Model, llm_weight: float, export_dir: Path | None, log) -> dict:
@@ -172,5 +172,5 @@ def run(input_path: str, out_dir: str = "outputs", model_spec: str = "none", sho
     }
     from .render import write_all
     write_all(out, title, eps, idx, promos, picks, meta)
-    log(f"Done in {meta['seconds']}s -> {out.resolve()}")
+    log(f"Done in {meta['seconds']}s, saved to {out.resolve()}")
     return {"title": title, "promos": promos, "picks": picks, "meta": meta, "idx": idx}

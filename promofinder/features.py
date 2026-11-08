@@ -135,7 +135,7 @@ def beat_cliff(b: Beat) -> tuple[float, list[str]]:
         rev, rv = _lex(b.text, REVEAL)
         q = 0.45 if b.text.rstrip().endswith("?") else 0.0
         threat = 0.35 if re.search(r"\b(will|shall|going to|won't|unless|or else|until)\b", b.text, re.I) and heat > 0.4 else 0.0
-        trail = 0.25 if b.text.rstrip().endswith(("...", "…", "—", "-")) else 0.0
+        trail = 0.25 if b.text.rstrip().endswith(("...", "\u2026", "\u2014", "-")) else 0.0  # scripts end cut-off lines with these
         s = max(s, 0.3 * heat + 0.4 * rev + q + threat + trail)
         if q:
             reasons.append("ends on a question")

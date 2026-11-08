@@ -138,7 +138,7 @@ def parse_episode_text(text: str, source: str = "") -> Episode:
                 off = any(p.strip().upper() in {"O.S.", "V.O.", "O.C.", "OFF-SCREEN"} for p in parens)
                 delivery = ", ".join(p for p in parens if p.strip().upper() not in {"O.S.", "V.O.", "O.C.", "OFF-SCREEN", "CONT'D"})
                 speaker = _norm_speaker(name)
-                body_text = body_text.strip().strip('"').strip("“”").strip()
+                body_text = body_text.strip().strip('"').strip("\u201c\u201d").strip()
             beats.append(Beat(id="", episode=num, idx=0, kind=kind, start=start, end=end, text=body_text,
                               speaker=speaker, delivery=delivery, offscreen=off, scene=scene, scene_heading=heading))
             i = k

@@ -16,7 +16,7 @@ from promofinder.render import seg_str, transcript
 
 load_env()  # GEMINI_API_KEY etc. from .env, so the key box can stay empty
 
-st.set_page_config(page_title="Promo Finder", page_icon="🎬")
+st.set_page_config(page_title="Promo Finder", page_icon=":material/movie:")
 ui.inject()
 
 MODEL_DEFAULTS = {"gemini": "gemini-3.8-flash", "openai / compatible": "gpt-4o-mini", "anthropic": "claude-haiku-5-5", "ollama": "llama3.1"}
