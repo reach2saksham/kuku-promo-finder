@@ -1,0 +1,102 @@
+EPISODE NUMBER: Episode 1
+EPISODE LOGLINE: A test episode written for unit tests: Mara is publicly accused of theft by her stepsister at her own engagement party.
+CONTINUITY NOTES: Synthetic sample, not real show content.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. BALLROOM – NIGHT
+Scene start: 00:00.00
+Scene end: 00:52.00
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Wide shot of a glittering ballroom; guests raise their glasses.
+
+**ACTION:**
+Start: (00:00.50) | End: (00:03.00)
+Mara smiles nervously beside her fiancé, Daniel.
+
+**DANIEL (Warm):**
+Start: (00:03.20) | End: (00:05.00)
+"To my future wife."
+
+**CAMERA:**
+Start: (00:05.00) | End: (00:07.00)
+Close-up of Mara's stepsister Vera stepping forward.
+
+**VERA (Cold, Accusing):**
+Start: (00:05.20) | End: (00:08.40)
+"Before you toast her, ask her where my necklace went!"
+
+**SOUND FX:**
+Start: (00:08.40) | End: (00:09.00)
+Glass shatters on the marble floor.
+
+**MARA (Shocked):**
+Start: (00:09.00) | End: (00:10.50)
+"What are you talking about?"
+
+**ACTION:**
+Start: (00:10.50) | End: (00:12.00)
+Vera grabs Mara's purse and empties it onto the floor. A diamond necklace falls out.
+
+**VERA (Gloating):**
+Start: (00:12.00) | End: (00:14.50)
+"There it is. My sister is a thief."
+
+**DANIEL (Stunned):**
+Start: (00:15.00) | End: (00:16.80)
+"Mara... is this true?"
+
+**MARA (Desperate):**
+Start: (00:17.00) | End: (00:20.00)
+"I have never seen it before in my life!"
+
+**CAMERA:**
+Start: (00:20.00) | End: (00:23.00)
+Guests whisper and point at Mara.
+
+**VERA (Mocking):**
+Start: (00:23.00) | End: (00:26.00)
+"Guards! Throw this liar out of my father's house."
+
+**ACTION:**
+Start: (00:26.00) | End: (00:29.00)
+Two guards seize Mara by the arms and drag her toward the doors.
+
+**MARA (Screaming):**
+Start: (00:29.00) | End: (00:31.50)
+"Daniel! Daniel, you know me!"
+
+**CAMERA:**
+Start: (00:31.50) | End: (00:34.00)
+Close-up of Daniel turning his back on her.
+
+**DANIEL (Cold):**
+Start: (00:34.00) | End: (00:36.00)
+"I don't know you at all."
+
+**ACTION:**
+Start: (00:36.00) | End: (00:40.00)
+The doors slam shut behind Mara. She collapses on the wet steps in the rain.
+
+**MARA (Trembling, Furious):**
+Start: (00:40.50) | End: (00:44.00)
+"You will regret this. All of you will regret this."
+
+**CAMERA:**
+Start: (00:44.00) | End: (00:48.00)
+A black car pulls up. A stranger in a dark coat steps out holding an umbrella over her.
+
+**STRANGER (Low):**
+Start: (00:48.00) | End: (00:51.00)
+"Do you know who your real father is?"
+
+**SOUND FX:**
+Start: (00:51.00) | End: (00:52.00)
+Ominous string sting into a cliffhanger cut to black.
+
+--- SCRIPT END ---

@@ -1,0 +1,1 @@
+streamlit==1.67.0   # only for app.py (the theme relies on this version); the CLI uses the standard library only
